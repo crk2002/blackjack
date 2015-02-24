@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/application.css">
+  <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="padding-top: 50px;">
+  <div class="span12">
+    <a href="/"><h1 class="text-center">Blackjack</h1></a>
+  
+    <%if !@message.empty? %>
+      <div class="alert alert-<%=@message[:type]%>">
+        <%=@message[:text]%>
+      </div>
+      <% end %>
+      <div class="table">
+        <%=yield %>
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="cards">
+<h2><%="Computer's"%> cards</h2>
+<ul>
+  <% if @flop %>
+  <li><img src="images/cards/cover.jpg" /> </li>
+  <% end %>
+<% session[:game].computer.cards.each_with_index do |card,idx| %>
+  <% unless idx <1 && @flop%>
+    <li><%=card.to_img%></li>
+  <% end %>
+<% end %>
+</ul>
+</div>
+
+<div class="cards">
+  <h2><%="#{@player_name}'s"%> cards</h2>
+  <ul>
+  <% session[:game].user.cards.each do |card| %>
+    <li><%=card.to_img%></li>
+  <% end %>
+  </ul>
+</div>
+

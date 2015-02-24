@@ -1,0 +1,54 @@
+.table {
+  padding: 1em;
+  background-color: #006600;
+  border: 10px solid #5D4024;
+}
+
+.alert {
+  width: 100%;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+label {
+  margin-top: 10px;
+  color: white;
+}
+
+h1 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+div.cards {
+}
+
+div.cards ul {
+  margin-left: 0;
+}
+
+div.cards ul li {
+ display: inline;
+}
+
+div.cards img {
+  border: 1px solid black;
+}
+
+.buttons {
+  margin-top: 1em;
+}
+
+.table p {
+  color: white;
+}
