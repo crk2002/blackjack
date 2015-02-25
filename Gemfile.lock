@@ -8,8 +8,6 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.0)
-    rack-flash (0.1.2)
-      rack
     rack-protection (1.5.3)
       rack
     sinatra (1.4.5)
@@ -24,5 +22,4 @@ PLATFORMS
 
 DEPENDENCIES
   pry
-  rack-flash
   sinatra
