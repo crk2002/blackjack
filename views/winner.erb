@@ -1,3 +1,5 @@
+<%=erb :errors %>
+<div class="table">
 <% if @cash > 0 %>
     <form class="buttons">
         <button type="submit" formaction="play_again" formmethod="post" class="btn btn-primary btn-large">Play Again</button>
@@ -5,5 +7,5 @@
 <% else %>
     <h2>Sorry. You're out of cash!</h2>
 <% end %>
-
 <%= erb :cards %>
+</div>

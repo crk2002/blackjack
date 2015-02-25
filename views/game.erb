@@ -1,10 +1,12 @@
-<form class="buttons">
-<p>You have $<%=@cash%>. Your current bet is $<%=@bet%>.</p>
-<% if @cash==@bet %>
+<%=erb :errors %>
+<div class="table">
+    <p>You have $
+    <%=@cash%>. Your current bet is $
+        <%=@bet%>.</p>
+    <% if @cash==@bet %>
     <p>It's all on the line!</p>
-<% end %>
-<button type="submit" formaction="hit_user" formmethod="post" class="btn btn-primary btn-large">Hit</button>
-<button type="submit" formaction="user_stays" formmethod="post" class="btn btn-danger btn-large">Stay</button>
-</form>
-
-<%= erb :cards %>
+    <% end %>
+        <button id="hit_user_button" class="btn btn-primary btn-large">Hit</button>
+        <button id="user_stays_button" class="btn btn-danger btn-large">Stay</button>
+    <%=erb :cards %>
+</div>

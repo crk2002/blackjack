@@ -14,6 +14,7 @@ end
 
 get '/' do
   session[:game]=Game.new
+  session[:game_over]=false
   erb :index
 end
 
@@ -44,18 +45,23 @@ post '/bet' do
 end
 
 get '/game' do
-  @flop=true
-  if session[:game].winner?
-    session[:game].adjust_balance
-    redirect "/winner"
-  else
+ if session[:game_over]
+   erb :winner
+ else
+    @flop=true
     erb :game
   end
 end
 
 post '/hit_user' do
   session[:game].hit_user
-  redirect '/game'
+  if session[:game].winner?
+    session[:game].adjust_balance
+    redirect "/winner"
+  else
+    @flop=true
+    erb :game, layout: false
+  end
 end
 
 post '/user_stays' do
@@ -66,11 +72,13 @@ end
 
 get '/winner' do
   @flop=false
+  session[:game_over]=true
   @message=session[:game].announce_winner
-  erb :winner
+  erb :winner, layout: false
 end
 
 post '/play_again' do
+  session[:game_over]=false
   session[:game].deck=Deck.new
   session[:game].user.cards=[]
   session[:game].computer.cards=[]
